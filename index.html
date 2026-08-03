@@ -3,46 +3,242 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ARFE — Moda contemporánea." />
   <title>ARFE — Moda contemporánea</title>
   <style>
-    :root { --ink:#2d2529; --rose:#b96e79; --blush:#fbf3f1; --cream:#fffdf9; --line:#eadbd8; --muted:#786d70; }
+    :root { --ink:#2d2529; --rose:#b96e79; --blush:#fbf3f1; --cream:#fffdf9; --line:#eadbd8; --muted:#786d70; --danger:#9b3f4e; --success:#446655; }
     *{box-sizing:border-box} body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif} button,input,select,textarea{font:inherit}
-    .topbar{background:#2e252a;color:#fff;text-align:center;padding:9px;font-size:12px;letter-spacing:1.2px}.header{display:flex;align-items:center;justify-content:space-between;padding:24px 7%;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fffdf9ed;backdrop-filter:blur(9px);z-index:10}.brand{font-family:Georgia,serif;font-size:28px;letter-spacing:5px;font-weight:bold}.brand span{font-size:11px;letter-spacing:3px;display:block;text-align:center;margin-top:2px;color:var(--rose)}nav{display:flex;gap:25px}nav a{font-size:13px;text-decoration:none;color:var(--ink);cursor:pointer}.bag{border:0;background:var(--rose);color:#fff;border-radius:22px;padding:10px 15px;cursor:pointer;font-weight:bold}.hero{min-height:460px;padding:70px 8%;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:linear-gradient(90deg,#f8e8e7 0 50%,transparent 50%),url('https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1400&q=80') center/cover}.hero-copy{max-width:510px}.eyebrow{color:var(--rose);letter-spacing:2px;font-size:12px;font-weight:bold}.hero h1{font-family:Georgia,serif;font-size:clamp(43px,6vw,75px);line-height:.98;margin:17px 0}.hero p{line-height:1.6;color:#5c5255;max-width:410px}.primary{background:var(--ink);color:#fff;border:0;padding:14px 23px;margin-top:14px;cursor:pointer;font-weight:bold}.section{padding:72px 7%}.heading{text-align:center}.heading h2{font-family:Georgia,serif;font-size:35px;margin:8px 0 28px}.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:29px}.filter{border:1px solid var(--line);background:#fff;padding:8px 15px;cursor:pointer;border-radius:20px;font-size:13px}.filter.active,.filter:hover{background:var(--rose);color:#fff;border-color:var(--rose)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.product{cursor:pointer}.photo{height:330px;background:#eee center/cover;position:relative}.tag{position:absolute;top:12px;left:12px;background:#fff;padding:6px 9px;font-size:10px;letter-spacing:1px}.product h3{font-size:15px;margin:14px 0 6px}.product p{color:var(--muted);font-size:13px;margin:0}.price{font-weight:bold!important;color:var(--ink)!important;margin-top:7px!important}.empty{grid-column:1/-1;text-align:center;padding:50px;color:var(--muted)}.story{background:var(--blush);display:grid;grid-template-columns:1fr 1fr;align-items:center}.story-img{height:400px;background:url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=80') center/cover}.story-copy{padding:10%;}.story h2{font-family:Georgia,serif;font-size:38px;margin:10px 0}.story p{line-height:1.7;color:#5c5255}.footer{background:var(--ink);color:#f9eeee;padding:45px 7%;display:flex;justify-content:space-between;align-items:center}.footer p{font-size:13px;color:#d4c5c6}.admin-link{background:none;border:none;color:#f9eeee;cursor:pointer;text-decoration:underline;font-size:12px}.modal{display:none;position:fixed;inset:0;background:#241c20aa;z-index:30;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.panel{background:#fffdf9;width:min(800px,100%);max-height:90vh;overflow:auto;padding:30px;position:relative}.close{position:absolute;right:18px;top:15px;border:0;background:none;font-size:26px;cursor:pointer}.panel h2{font-family:Georgia,serif;margin-top:0}.login{width:min(400px,100%)}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:13px;font-size:13px}.field input,.field select,.field textarea{padding:11px;border:1px solid var(--line);background:#fff}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-grid .wide{grid-column:1/-1}.admin-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.secondary{border:1px solid var(--ink);background:transparent;padding:10px 14px;cursor:pointer}.inventory-row{border-top:1px solid var(--line);padding:13px 0;display:flex;align-items:center;gap:11px}.thumb{height:45px;width:37px;background:center/cover #eee}.inventory-row div:nth-child(2){flex:1}.inventory-row small{display:block;color:var(--muted);margin-top:3px}.delete{border:0;background:#f5e5e5;color:#9b3f4e;padding:8px 11px;cursor:pointer}.notice{font-size:12px;color:var(--muted);margin:4px 0 15px}.cart-items{border-top:1px solid var(--line)}.cart-line{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}.cart-total{font-weight:bold;display:flex;justify-content:space-between;margin:20px 0}.product-detail{display:grid;grid-template-columns:minmax(220px,1fr) 1fr;gap:28px;align-items:center}.product-detail-image{min-height:420px;background:#eee center/cover}.product-detail h2{font-size:36px;margin-bottom:8px}.detail-price{font-size:20px;font-weight:bold;color:var(--rose)}.toast{position:fixed;bottom:25px;right:25px;background:var(--ink);color:white;padding:14px 18px;display:none;z-index:50}.toast.show{display:block}@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;background:linear-gradient(90deg,#f8e8e7e8,#f8e8e7e8),url('https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1400&q=80') center/cover}.grid{grid-template-columns:repeat(2,1fr)}.photo{height:260px}.story{grid-template-columns:1fr}.story-img{height:300px}.footer{display:block}.form-grid,.product-detail{grid-template-columns:1fr}.product-detail-image{min-height:340px}}
+    .topbar{background:#2e252a;color:#fff;text-align:center;padding:9px;font-size:12px;letter-spacing:1.2px}.header{display:flex;align-items:center;justify-content:space-between;padding:24px 7%;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fffdf9ed;backdrop-filter:blur(9px);z-index:10}.brand{font-family:Georgia,serif;font-size:28px;letter-spacing:5px;font-weight:bold}.brand span{font-size:11px;letter-spacing:3px;display:block;text-align:center;margin-top:2px;color:var(--rose)}nav{display:flex;gap:25px}nav a{font-size:13px;text-decoration:none;color:var(--ink);cursor:pointer}.bag{border:0;background:var(--rose);color:#fff;border-radius:22px;padding:10px 15px;cursor:pointer;font-weight:bold}.hero{min-height:460px;padding:70px 8%;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:linear-gradient(90deg,#f8e8e7 0 50%,transparent 50%),url('https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1400&q=80') center/cover}.hero-copy{max-width:510px}.eyebrow{color:var(--rose);letter-spacing:2px;font-size:12px;font-weight:bold}.hero h1{font-family:Georgia,serif;font-size:clamp(43px,6vw,75px);line-height:.98;margin:17px 0}.hero p{line-height:1.6;color:#5c5255;max-width:410px}.primary{background:var(--ink);color:#fff;border:0;padding:14px 23px;margin-top:14px;cursor:pointer;font-weight:bold}.primary:disabled{opacity:.6;cursor:not-allowed}.section{padding:72px 7%}.heading{text-align:center}.heading h2{font-family:Georgia,serif;font-size:35px;margin:8px 0 28px}.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:29px}.filter{border:1px solid var(--line);background:#fff;padding:8px 15px;cursor:pointer;border-radius:20px;font-size:13px}.filter.active,.filter:hover{background:var(--rose);color:#fff;border-color:var(--rose)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.product{cursor:pointer}.photo{height:330px;background:#eee center/cover;position:relative}.tag{position:absolute;top:12px;left:12px;background:#fff;padding:6px 9px;font-size:10px;letter-spacing:1px}.product h3{font-size:15px;margin:14px 0 6px}.product p{color:var(--muted);font-size:13px;margin:0}.price{font-weight:bold!important;color:var(--ink)!important;margin-top:7px!important}.empty{grid-column:1/-1;text-align:center;padding:50px;color:var(--muted)}.story{background:var(--blush);display:grid;grid-template-columns:1fr 1fr;align-items:center}.story-img{height:400px;background:url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=80') center/cover}.story-copy{padding:10%}.story h2{font-family:Georgia,serif;font-size:38px;margin:10px 0}.story p{line-height:1.7;color:#5c5255}.footer{background:var(--ink);color:#f9eeee;padding:45px 7%;display:flex;justify-content:space-between;align-items:center}.footer p{font-size:13px;color:#d4c5c6}.admin-link{background:none;border:none;color:#f9eeee;cursor:pointer;text-decoration:underline;font-size:12px}.modal{display:none;position:fixed;inset:0;background:#241c20aa;z-index:30;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.panel{background:#fffdf9;width:min(800px,100%);max-height:90vh;overflow:auto;padding:30px;position:relative}.close{position:absolute;right:18px;top:15px;border:0;background:none;font-size:26px;cursor:pointer}.panel h2{font-family:Georgia,serif;margin-top:0}.login{width:min(400px,100%)}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:13px;font-size:13px}.field input,.field select{padding:11px;border:1px solid var(--line);background:#fff}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-grid .wide{grid-column:1/-1}.admin-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.secondary{border:1px solid var(--ink);background:transparent;padding:10px 14px;cursor:pointer}.inventory-row{border-top:1px solid var(--line);padding:13px 0;display:flex;align-items:center;gap:11px}.thumb{height:45px;width:37px;background:center/cover #eee;flex:none}.inventory-row div:nth-child(2){flex:1}.inventory-row small{display:block;color:var(--muted);margin-top:3px}.delete{border:0;background:#f5e5e5;color:var(--danger);padding:8px 11px;cursor:pointer}.edit{border:1px solid var(--line);background:#fff;padding:8px 11px;cursor:pointer}.notice,.form-status{font-size:12px;color:var(--muted);margin:4px 0 15px}.form-status.error{color:var(--danger)}.form-status.success{color:var(--success)}.cart-items{border-top:1px solid var(--line)}.cart-line{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}.cart-total{font-weight:bold;display:flex;justify-content:space-between;margin:20px 0}.product-detail{display:grid;grid-template-columns:minmax(220px,1fr) 1fr;gap:28px;align-items:center}.product-detail-image{min-height:420px;background:#eee center/cover}.product-detail h2{font-size:36px;margin-bottom:8px}.detail-price{font-size:20px;font-weight:bold;color:var(--rose)}.toast{position:fixed;bottom:25px;right:25px;background:var(--ink);color:white;padding:14px 18px;display:none;z-index:50}.toast.show{display:block}.loading{grid-column:1/-1;text-align:center;padding:50px;color:var(--muted)}.hidden{display:none!important}.file-note{font-size:11px;color:var(--muted);margin:0}.inventory-actions{display:flex;gap:8px}.required{color:var(--rose)}@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;background:linear-gradient(90deg,#f8e8e7e8,#f8e8e7e8),url('https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1400&q=80') center/cover}.grid{grid-template-columns:repeat(2,1fr)}.photo{height:260px}.story{grid-template-columns:1fr}.story-img{height:300px}.footer{display:block}.form-grid,.product-detail{grid-template-columns:1fr}.product-detail-image{min-height:340px}.inventory-row{align-items:flex-start}.inventory-actions{flex-direction:column}}
   </style>
 </head>
 <body>
   <div class="topbar">ENVÍO GRATIS EN COMPRAS SUPERIORES A $80</div>
-  <header class="header"><div class="brand">ARFE<span>MODERN FEMININITY</span></div><nav><a onclick="document.getElementById('coleccion').scrollIntoView({behavior:'smooth'})">COLECCIÓN</a><a onclick="document.getElementById('nosotras').scrollIntoView({behavior:'smooth'})">NOSOTRAS</a></nav><button class="bag" onclick="openCart()">BOLSA <span id="bagCount">0</span></button></header>
+  <header class="header"><div class="brand">ARFE<span>MODERN FEMININITY</span></div><nav><a href="#coleccion">COLECCIÓN</a><a href="#nosotras">NOSOTRAS</a></nav><button id="bagButton" class="bag" type="button">BOLSA <span id="bagCount">0</span></button></header>
   <main>
-    <section class="hero"><div class="hero-copy"><div class="eyebrow">NUEVA COLECCIÓN · 2026</div><h1>Lo esencial,<br>con actitud.</h1><p>Prendas versátiles para una mujer que se mueve con seguridad entre sus propios planes.</p><button class="primary" onclick="document.getElementById('coleccion').scrollIntoView({behavior:'smooth'})">DESCUBRIR AHORA</button></div></section>
-    <section id="coleccion" class="section"><div class="heading"><div class="eyebrow">SELECCIÓN ARFE</div><h2>Piezas para repetir</h2></div><div id="filters" class="filters"></div><div id="catalog" class="grid"></div></section>
-    <section id="nosotras" class="story"><div class="story-img"></div><div class="story-copy"><div class="eyebrow">NUESTRA IDEA</div><h2>Vestirte debe sentirse como tú.</h2><p>En ARFE creamos un armario contemporáneo: siluetas cómodas, detalles cuidados y tonos que combinan sin esfuerzo.</p><button class="secondary" onclick="document.getElementById('coleccion').scrollIntoView({behavior:'smooth'})">VER LA COLECCIÓN</button></div></section>
+    <section class="hero"><div class="hero-copy"><div class="eyebrow">NUEVA COLECCIÓN · 2026</div><h1>Lo esencial,<br>con actitud.</h1><p>Prendas versátiles para una mujer que se mueve con seguridad entre sus propios planes.</p><a class="primary" href="#coleccion" style="display:inline-block;text-decoration:none">DESCUBRIR AHORA</a></div></section>
+    <section id="coleccion" class="section"><div class="heading"><div class="eyebrow">SELECCIÓN ARFE</div><h2>Piezas para repetir</h2></div><div id="filters" class="filters"></div><div id="catalog" class="grid" aria-live="polite"><p class="loading">Cargando colección…</p></div></section>
+    <section id="nosotras" class="story"><div class="story-img"></div><div class="story-copy"><div class="eyebrow">NUESTRA IDEA</div><h2>Vestirte debe sentirse como tú.</h2><p>En ARFE creamos un armario contemporáneo: siluetas cómodas, detalles cuidados y tonos que combinan sin esfuerzo.</p><a class="secondary" href="#coleccion" style="display:inline-block;text-decoration:none">VER LA COLECCIÓN</a></div></section>
   </main>
-  <footer class="footer"><div class="brand">ARFE<span>MODERN FEMININITY</span></div><p>© 2026 ARFE. Moda pensada para tu ritmo.</p><div style="display:flex;gap:15px;flex-wrap:wrap"><button class="admin-link" onclick="openWhatsApp()">WhatsApp</button><button class="admin-link" onclick="openAdmin()">Acceso inventario</button></div></footer>
-  <div id="adminModal" class="modal"><div class="panel"><button class="close" onclick="closeModal('adminModal')">×</button><div id="loginArea" class="login"><h2>Acceso de administración</h2><p class="notice">Panel para publicar, editar y retirar productos.</p><div class="field"><label>Contraseña</label><input id="password" type="password" placeholder="Ingresa tu contraseña" onkeydown="if(event.key==='Enter') login()"></div><button class="primary" onclick="login()">ENTRAR</button><p class="notice">Contraseña inicial: <b>ArfeParaEllas2026</b>. Cámbiala en el código antes de publicar.</p></div><div id="adminArea" style="display:none"><div class="admin-top"><div><h2>Inventario</h2><p class="notice">Los cambios se guardan en este navegador.</p></div><button class="secondary" onclick="logout()">SALIR</button></div><form id="productForm" onsubmit="saveProduct(event)"><div class="form-grid"><div class="field"><label>Nombre</label><input id="pName" required placeholder="Ej. Blazer Aura"></div><div class="field"><label>Categoría</label><select id="pCategory"><option>Blazers</option><option>Vestidos</option><option>Sets</option><option>Pantalones</option><option>Botines</option><option>Prendas base</option></select></div><div class="field"><label>Precio (USD)</label><input id="pPrice" required type="number" min="0" step="0.01" placeholder="89"></div><div class="field"><label>Inventario</label><input id="pStock" required type="number" min="0" value="1"></div><div class="field wide"><label>URL de imagen</label><input id="pImage" required type="url" placeholder="https://..."></div><div class="field wide"><label>Etiqueta (opcional)</label><input id="pTag" placeholder="NUEVO"></div></div><button class="primary" type="submit">PUBLICAR PRODUCTO</button></form><div id="inventoryList" style="margin-top:28px"></div></div></div></div>
-  <div id="productModal" class="modal"><div class="panel" style="max-width:720px"><button class="close" onclick="closeModal('productModal')">×</button><div id="productDetail"></div></div></div>
-  <div id="cartModal" class="modal"><div class="panel" style="max-width:480px"><button class="close" onclick="closeModal('cartModal')">×</button><h2>Tu bolsa</h2><div id="cartItems" class="cart-items"></div><div class="cart-total"><span>Total</span><span id="cartTotal">$0.00</span></div><button class="primary" style="width:100%" onclick="checkout()">PEDIR POR WHATSAPP</button><p class="notice" style="margin-bottom:0">Te contactaremos por WhatsApp para confirmar disponibilidad, envío y forma de pago.</p></div></div><div id="toast" class="toast"></div>
-  <script>
-    const DEFAULT_PRODUCTS=[
-      {id:1,name:'Blazer Aura',category:'Blazers',price:98,stock:6,tag:'NUEVO',image:'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=700&q=80'},
-      {id:2,name:'Vestido Siena',category:'Vestidos',price:76,stock:4,tag:'MÁS VENDIDO',image:'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80'},
-      {id:3,name:'Set Marfil',category:'Sets',price:112,stock:3,tag:'EDICIÓN LIMITADA',image:'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=700&q=80'},
-      {id:'elan-marino-2026',name:'Conjunto Élan Marino',category:'Sets',price:45,stock:10,tag:'NUEVO',image:'images/conjunto-elan-marino.jpeg'},
-      {id:'pantalon-aura-2026',name:'Pantalón Aura',category:'Pantalones',price:25,stock:10,tag:'NUEVO',image:'images/pantalon-aura-principal.png'},
-      {id:'botines-ebano-2026',name:'Botines Ébano',category:'Botines',price:55,stock:10,tag:'NUEVO',image:'images/botines-ebano.png'},
-      {id:4,name:'Top Nube',category:'Prendas base',price:38,stock:11,tag:'',image:'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80'}
-    ];
-    const WHATSAPP_NUMBER='593962893973'; const ELAN_MARINO={id:'elan-marino-2026',name:'Conjunto Élan Marino',category:'Sets',price:45,stock:10,tag:'NUEVO',image:'images/conjunto-elan-marino.jpeg'}; const PANTALON_AURA={id:'pantalon-aura-2026',name:'Pantalón Aura',category:'Pantalones',price:25,stock:10,tag:'NUEVO',image:'images/pantalon-aura-principal.png'}; const BOTINES_EBANO={id:'botines-ebano-2026',name:'Botines Ébano',category:'Botines',price:55,stock:10,tag:'NUEVO',image:'images/botines-ebano.png'}; let products=JSON.parse(localStorage.getItem('luneaProducts')||'null')||DEFAULT_PRODUCTS; if(!localStorage.getItem('luneaElanMarinoAdded')){if(!products.some(p=>p.id===ELAN_MARINO.id))products.unshift(ELAN_MARINO);localStorage.setItem('luneaProducts',JSON.stringify(products));localStorage.setItem('luneaElanMarinoAdded','1')} if(!localStorage.getItem('luneaPantalonAuraAdded')){if(!products.some(p=>p.id===PANTALON_AURA.id))products.unshift(PANTALON_AURA);localStorage.setItem('luneaProducts',JSON.stringify(products));localStorage.setItem('luneaPantalonAuraAdded','1')} if(!localStorage.getItem('luneaBotinesEbanoAdded')){if(!products.some(p=>p.id===BOTINES_EBANO.id))products.unshift(BOTINES_EBANO);localStorage.setItem('luneaProducts',JSON.stringify(products));localStorage.setItem('luneaBotinesEbanoAdded','1')} let cart=JSON.parse(localStorage.getItem('luneaCart')||'[]'); let selected='Todo';
-    const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n); const persist=()=>localStorage.setItem('luneaProducts',JSON.stringify(products));
-    function render(){const cats=['Todo',...new Set(products.map(p=>p.category))];document.getElementById('filters').innerHTML=cats.map(c=>`<button class="filter ${c===selected?'active':''}" onclick="selected='${c}';render()">${c}</button>`).join('');const shown=products.filter(p=>selected==='Todo'||p.category===selected);document.getElementById('catalog').innerHTML=shown.length?shown.map(p=>`<article class="product" onclick='openProduct(${JSON.stringify(p.id)})'><div class="photo" style="background-image:url('${p.image}')">${p.tag?`<span class="tag">${p.tag}</span>`:''}</div><h3>${p.name}</h3><p>${p.category}</p><p class="price">${money(p.price)}</p></article>`).join(''):'<div class="empty">No hay productos en esta categoría todavía.</div>';renderBag()}
-    function renderBag(){document.getElementById('bagCount').textContent=cart.reduce((s,i)=>s+i.qty,0)} function openProduct(id){const p=products.find(x=>x.id===id);if(!p)return;document.getElementById('productDetail').innerHTML=`<div class="product-detail"><div class="product-detail-image" style="background-image:url('${p.image}')"></div><div><div class="eyebrow">${p.category}</div><h2>${p.name}</h2><p class="detail-price">${money(p.price)}</p><p class="notice">Disponibles: ${p.stock} unidades</p><p>Una pieza versátil para elevar tus looks con estilo y comodidad.</p><button class="primary" onclick='addToCart(${JSON.stringify(p.id)});closeModal("productModal")'>AGREGAR A LA BOLSA</button></div></div>`;document.getElementById('productModal').classList.add('show')}
-    function addToCart(id){let p=products.find(x=>x.id===id);if(!p||p.stock<1)return toast('Producto agotado');let item=cart.find(x=>x.id===id);if(item){if(item.qty>=p.stock)return toast('No hay más unidades disponibles');item.qty++}else cart.push({id,qty:1});localStorage.setItem('luneaCart',JSON.stringify(cart));renderBag();toast('Añadido a tu bolsa')}
-    function openCart(){renderCart();document.getElementById('cartModal').classList.add('show')} function renderCart(){let lines=cart.map(i=>{let p=products.find(x=>x.id===i.id);return p?`<div class="cart-line"><span>${p.name} × ${i.qty}</span><span>${money(p.price*i.qty)} <button class="delete" onclick='removeCart(${JSON.stringify(p.id)})'>×</button></span></div>`:''}).join('');document.getElementById('cartItems').innerHTML=lines||'<p class="notice" style="padding:15px 0">Tu bolsa está vacía.</p>';document.getElementById('cartTotal').textContent=money(cart.reduce((s,i)=>{let p=products.find(x=>x.id===i.id);return s+(p?p.price*i.qty:0)},0))} function removeCart(id){cart=cart.filter(x=>x.id!==id);localStorage.setItem('luneaCart',JSON.stringify(cart));renderCart();renderBag()}
-    function openWhatsApp(){window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, quisiera más información sobre las prendas.')}`,'_blank')} function checkout(){if(!cart.length)return toast('Tu bolsa está vacía');const detail=cart.map(i=>{const p=products.find(x=>x.id===i.id);return p?`• ${p.name} × ${i.qty} — ${money(p.price*i.qty)}`:''}).filter(Boolean).join('\n');const total=cart.reduce((s,i)=>{const p=products.find(x=>x.id===i.id);return s+(p?p.price*i.qty:0)},0);const message=`Hola, quiero realizar este pedido:\n\n${detail}\n\nTotal: ${money(total)}\n\nPor favor, confírmame disponibilidad, formas de pago y envío.`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,'_blank')}
-    function openAdmin(){document.getElementById('adminModal').classList.add('show')} function closeModal(id){document.getElementById(id).classList.remove('show')} function login(){if(document.getElementById('password').value==='ArfeParaEllas2026'){document.getElementById('loginArea').style.display='none';document.getElementById('adminArea').style.display='block';renderInventory()}else toast('Contraseña incorrecta')} function logout(){document.getElementById('password').value='';document.getElementById('loginArea').style.display='block';document.getElementById('adminArea').style.display='none'}
-    function saveProduct(e){e.preventDefault();let p={id:Date.now(),name:pName.value.trim(),category:pCategory.value,price:Number(pPrice.value),stock:Number(pStock.value),image:pImage.value.trim(),tag:pTag.value.trim().toUpperCase()};products.unshift(p);persist();e.target.reset();pStock.value=1;render();renderInventory();toast('Producto publicado')}
-    function renderInventory(){document.getElementById('inventoryList').innerHTML=products.map(p=>`<div class="inventory-row"><div class="thumb" style="background-image:url('${p.image}')"></div><div><b>${p.name}</b><small>${p.category} · ${money(p.price)} · ${p.stock} en inventario</small></div><button class="delete" onclick="deleteProduct(${p.id})">Eliminar</button></div>`).join('')} function deleteProduct(id){if(!confirm('¿Eliminar este producto del catálogo?'))return;products=products.filter(p=>p.id!==id);cart=cart.filter(x=>x.id!==id);persist();localStorage.setItem('luneaCart',JSON.stringify(cart));render();renderInventory();toast('Producto eliminado')}
-    function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)} render();
+  <footer class="footer"><div class="brand">ARFE<span>MODERN FEMININITY</span></div><p>© 2026 ARFE. Moda pensada para tu ritmo.</p><div style="display:flex;gap:15px;flex-wrap:wrap"><button id="whatsAppInfo" class="admin-link" type="button">WhatsApp</button><button id="adminButton" class="admin-link" type="button">Acceso inventario</button></div></footer>
+
+  <div id="adminModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="adminTitle"><div class="panel"><button class="close" type="button" data-close="adminModal" aria-label="Cerrar">×</button>
+    <div id="loginArea" class="login"><h2 id="adminTitle">Acceso de administración</h2><p class="notice">Ingresa con el correo y la contraseña de tu cuenta administradora de ARFE.</p><form id="loginForm"><div class="field"><label for="loginEmail">Correo</label><input id="loginEmail" type="email" autocomplete="email" required placeholder="tu-correo@ejemplo.com"></div><div class="field"><label for="loginPassword">Contraseña</label><input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Ingresa tu contraseña"></div><button id="loginSubmit" class="primary" type="submit">ENTRAR</button><p id="loginStatus" class="form-status" role="status"></p></form></div>
+    <div id="deniedArea" class="login hidden"><h2>Cuenta sin acceso</h2><p class="notice">Esta cuenta inició sesión, pero no está autorizada para administrar ARFE.</p><button id="deniedSignOut" class="secondary" type="button">SALIR</button></div>
+    <div id="adminArea" class="hidden"><div class="admin-top"><div><h2>Inventario</h2><p class="notice">Los cambios se publican para todos los dispositivos.</p></div><button id="signOutButton" class="secondary" type="button">SALIR</button></div>
+      <form id="productForm"><input id="productId" type="hidden"><div class="form-grid"><div class="field"><label for="pName">Nombre <span class="required">*</span></label><input id="pName" required maxlength="120" placeholder="Ej. Blazer Aura"></div><div class="field"><label for="pCategory">Categoría <span class="required">*</span></label><select id="pCategory" required><option>Blazers</option><option>Vestidos</option><option>Sets</option><option>Pantalones</option><option>Botines</option><option>Prendas base</option></select></div><div class="field"><label for="pPrice">Precio (USD) <span class="required">*</span></label><input id="pPrice" required type="number" min="0" step="0.01" placeholder="89"></div><div class="field"><label for="pStock">Unidades disponibles <span class="required">*</span></label><input id="pStock" required type="number" min="0" step="1" value="1"></div><div class="field wide"><label for="pPhoto">Foto <span id="photoRequired" class="required">*</span></label><input id="pPhoto" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><p id="photoNote" class="file-note">Selecciona una foto JPG, PNG, WEBP o GIF. Las imágenes descargadas de WhatsApp se pueden elegir aquí.</p></div><div class="field wide"><label for="pTag">Etiqueta (opcional)</label><input id="pTag" maxlength="40" placeholder="NUEVO"></div></div><button id="productSubmit" class="primary" type="submit">PUBLICAR PRODUCTO</button><button id="cancelEdit" class="secondary hidden" type="button" style="margin-left:8px">CANCELAR</button><p id="productStatus" class="form-status" role="status"></p></form><div id="inventoryList" style="margin-top:28px"></div>
+    </div>
+  </div></div>
+  <div id="productModal" class="modal" role="dialog" aria-modal="true" aria-label="Detalle del producto"><div class="panel" style="max-width:720px"><button class="close" type="button" data-close="productModal" aria-label="Cerrar">×</button><div id="productDetail"></div></div></div>
+  <div id="cartModal" class="modal" role="dialog" aria-modal="true" aria-label="Tu bolsa"><div class="panel" style="max-width:480px"><button class="close" type="button" data-close="cartModal" aria-label="Cerrar">×</button><h2>Tu bolsa</h2><div id="cartItems" class="cart-items"></div><div class="cart-total"><span>Total</span><span id="cartTotal">$0.00</span></div><button id="checkoutButton" class="primary" style="width:100%" type="button">PEDIR POR WHATSAPP</button><p class="notice" style="margin-bottom:0">Te contactaremos por WhatsApp para confirmar disponibilidad, envío y forma de pago.</p></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    // Esta clave es pública por diseño. La protección real está en Supabase Auth y las políticas RLS.
+    const SUPABASE_URL = 'https://wyutjdyyavplkuliiwev.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_egN6j6J5IyCbyQF4DorjNA_kjldnXRV';
+    const PRODUCTS_BUCKET = 'product-images';
+    const WHATSAPP_NUMBER = '593962893973';
+    const CART_STORAGE_KEY = 'arfeCart';
+    const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+
+    let products = [];
+    let cart = safelyReadCart();
+    let selectedCategory = 'Todo';
+    let session = null;
+    let isAdmin = false;
+
+    const $ = (selector) => document.querySelector(selector);
+    const money = (value) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Number(value));
+    const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[character]);
+    const imageStyle = (url) => `background-image:url("${encodeURI(String(url || '')).replace(/"/g, '%22')}")`;
+
+    function safelyReadCart() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '[]');
+        return Array.isArray(saved) ? saved.filter((item) => item && item.id && Number.isInteger(item.qty) && item.qty > 0) : [];
+      } catch { return []; }
+    }
+    function saveCart() { localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart)); }
+    function toast(message) { const element = $('#toast'); element.textContent = message; element.classList.add('show'); window.clearTimeout(toast.timeout); toast.timeout = window.setTimeout(() => element.classList.remove('show'), 2800); }
+    function setStatus(selector, message = '', kind = '') { const element = $(selector); element.textContent = message; element.className = `form-status ${kind}`; }
+    function closeModal(id) { $(`#${id}`).classList.remove('show'); }
+    function openModal(id) { $(`#${id}`).classList.add('show'); }
+
+    async function loadProducts() {
+      $('#catalog').innerHTML = '<p class="loading">Cargando colección…</p>';
+      const { data, error } = await supabase.from('products').select('id,name,category,price_usd,units_available,label,photo_url,photo_path,created_at').order('created_at', { ascending: false });
+      if (error) {
+        console.error(error);
+        $('#catalog').innerHTML = '<p class="empty">La colección está temporalmente no disponible. Intenta de nuevo en unos momentos.</p>';
+        return;
+      }
+      products = data || [];
+      cart = cart.map((item) => {
+        const product = products.find((entry) => entry.id === item.id);
+        return product ? { id: item.id, qty: Math.min(item.qty, product.units_available) } : null;
+      }).filter(Boolean).filter((item) => item.qty > 0);
+      saveCart();
+      if (!['Todo', ...products.map((product) => product.category)].includes(selectedCategory)) selectedCategory = 'Todo';
+      renderCatalog();
+      renderInventory();
+    }
+
+    function renderCatalog() {
+      const categories = ['Todo', ...new Set(products.map((product) => product.category))];
+      $('#filters').innerHTML = categories.map((category) => `<button type="button" class="filter ${category === selectedCategory ? 'active' : ''}" data-category="${escapeHtml(category)}">${escapeHtml(category)}</button>`).join('');
+      const shown = products.filter((product) => selectedCategory === 'Todo' || product.category === selectedCategory);
+      $('#catalog').innerHTML = shown.length ? shown.map((product) => `<article class="product" tabindex="0" role="button" data-product-id="${product.id}" aria-label="Ver ${escapeHtml(product.name)}"><div class="photo" style="${imageStyle(product.photo_url)}">${product.label ? `<span class="tag">${escapeHtml(product.label)}</span>` : ''}</div><h3>${escapeHtml(product.name)}</h3><p>${escapeHtml(product.category)}</p><p class="price">${money(product.price_usd)}</p></article>`).join('') : '<div class="empty">No hay productos en esta categoría todavía.</div>';
+      renderBag();
+    }
+
+    function renderBag() { $('#bagCount').textContent = cart.reduce((sum, item) => sum + item.qty, 0); }
+    function findProduct(id) { return products.find((product) => product.id === id); }
+
+    function openProduct(id) {
+      const product = findProduct(id);
+      if (!product) return;
+      const outOfStock = product.units_available < 1;
+      $('#productDetail').innerHTML = `<div class="product-detail"><div class="product-detail-image" style="${imageStyle(product.photo_url)}"></div><div><div class="eyebrow">${escapeHtml(product.category)}</div><h2>${escapeHtml(product.name)}</h2><p class="detail-price">${money(product.price_usd)}</p><p class="notice">${outOfStock ? 'Producto agotado' : `Disponibles: ${product.units_available} unidades`}</p><p>Una pieza versátil para elevar tus looks con estilo y comodidad.</p><button id="addToBagButton" class="primary" type="button" ${outOfStock ? 'disabled' : ''}>${outOfStock ? 'AGOTADO' : 'AGREGAR A LA BOLSA'}</button></div></div>`;
+      $('#addToBagButton').addEventListener('click', () => { addToCart(id); closeModal('productModal'); });
+      openModal('productModal');
+    }
+
+    function addToCart(id) {
+      const product = findProduct(id);
+      if (!product || product.units_available < 1) return toast('Producto agotado');
+      const item = cart.find((entry) => entry.id === id);
+      if (item) { if (item.qty >= product.units_available) return toast('No hay más unidades disponibles'); item.qty += 1; }
+      else cart.push({ id, qty: 1 });
+      saveCart(); renderBag(); toast('Añadido a tu bolsa');
+    }
+
+    function renderCart() {
+      const lines = cart.map((item) => { const product = findProduct(item.id); return product ? `<div class="cart-line"><span>${escapeHtml(product.name)} × ${item.qty}</span><span>${money(product.price_usd * item.qty)} <button class="delete" type="button" data-remove-cart="${product.id}" aria-label="Quitar ${escapeHtml(product.name)}">×</button></span></div>` : ''; }).join('');
+      $('#cartItems').innerHTML = lines || '<p class="notice" style="padding:15px 0">Tu bolsa está vacía.</p>';
+      const total = cart.reduce((sum, item) => { const product = findProduct(item.id); return sum + (product ? Number(product.price_usd) * item.qty : 0); }, 0);
+      $('#cartTotal').textContent = money(total);
+    }
+
+    function checkout() {
+      if (!cart.length) return toast('Tu bolsa está vacía');
+      const detail = cart.map((item) => { const product = findProduct(item.id); return product ? `• ${product.name} × ${item.qty} — ${money(product.price_usd * item.qty)}` : ''; }).filter(Boolean).join('\n');
+      const total = cart.reduce((sum, item) => { const product = findProduct(item.id); return sum + (product ? Number(product.price_usd) * item.qty : 0); }, 0);
+      const message = `Hola, quiero realizar este pedido:\n\n${detail}\n\nTotal: ${money(total)}\n\nPor favor, confírmame disponibilidad, formas de pago y envío.`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+    }
+
+    async function refreshAuth() {
+      const { data: { session: activeSession } } = await supabase.auth.getSession();
+      session = activeSession;
+      isAdmin = false;
+      if (session) {
+        const { data, error } = await supabase.rpc('is_admin');
+        if (error) console.error(error);
+        isAdmin = data === true;
+      }
+      syncAdminView();
+    }
+
+    function syncAdminView() {
+      $('#loginArea').classList.toggle('hidden', Boolean(session));
+      $('#deniedArea').classList.toggle('hidden', !session || isAdmin);
+      $('#adminArea').classList.toggle('hidden', !session || !isAdmin);
+      if (session && isAdmin) renderInventory();
+    }
+
+    async function signIn(event) {
+      event.preventDefault();
+      const button = $('#loginSubmit');
+      button.disabled = true; setStatus('#loginStatus', 'Verificando acceso…');
+      const { error } = await supabase.auth.signInWithPassword({ email: $('#loginEmail').value.trim(), password: $('#loginPassword').value });
+      button.disabled = false;
+      if (error) return setStatus('#loginStatus', 'No fue posible iniciar sesión. Revisa el correo y la contraseña.', 'error');
+      $('#loginPassword').value = '';
+      setStatus('#loginStatus', '');
+      await refreshAuth();
+    }
+
+    async function signOut() { await supabase.auth.signOut(); $('#loginForm').reset(); setStatus('#loginStatus', ''); await refreshAuth(); }
+
+    function resetProductForm() {
+      $('#productForm').reset(); $('#productId').value = ''; $('#pStock').value = 1; $('#photoRequired').classList.remove('hidden'); $('#photoNote').textContent = 'Selecciona una foto JPG, PNG, WEBP o GIF. Las imágenes descargadas de WhatsApp se pueden elegir aquí.'; $('#productSubmit').textContent = 'PUBLICAR PRODUCTO'; $('#cancelEdit').classList.add('hidden'); setStatus('#productStatus', '');
+    }
+
+    function startEdit(id) {
+      const product = findProduct(id); if (!product) return;
+      $('#productId').value = product.id; $('#pName').value = product.name; $('#pCategory').value = product.category; $('#pPrice').value = product.price_usd; $('#pStock').value = product.units_available; $('#pTag').value = product.label || ''; $('#pPhoto').value = ''; $('#photoRequired').classList.add('hidden'); $('#photoNote').textContent = 'Deja la foto vacía para conservar la actual.'; $('#productSubmit').textContent = 'GUARDAR CAMBIOS'; $('#cancelEdit').classList.remove('hidden'); setStatus('#productStatus', ''); $('#productForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function allowedImage(file) {
+      return file && (file.type.startsWith('image/') || /\.(jpe?g|png|webp|gif)$/i.test(file.name));
+    }
+
+    async function uploadPhoto(file) {
+      if (!allowedImage(file)) throw new Error('Elige una imagen JPG, PNG, WEBP o GIF.');
+      if (file.size > 10 * 1024 * 1024) throw new Error('La foto debe pesar menos de 10 MB.');
+      const extension = (file.name.split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '') || 'jpg';
+      const path = `products/${crypto.randomUUID()}.${extension}`;
+      const { error: uploadError } = await supabase.storage.from(PRODUCTS_BUCKET).upload(path, file, { cacheControl: '3600', contentType: file.type || `image/${extension}`, upsert: false });
+      if (uploadError) throw uploadError;
+      const { data } = supabase.storage.from(PRODUCTS_BUCKET).getPublicUrl(path);
+      return { path, url: data.publicUrl };
+    }
+
+    async function saveProduct(event) {
+      event.preventDefault();
+      const id = $('#productId').value;
+      const existing = id ? findProduct(id) : null;
+      const file = $('#pPhoto').files[0];
+      if (!existing && !file) return setStatus('#productStatus', 'Selecciona una foto para el producto.', 'error');
+      const button = $('#productSubmit'); button.disabled = true; setStatus('#productStatus', file ? 'Subiendo foto…' : 'Guardando cambios…');
+      let uploaded = null;
+      try {
+        if (file) uploaded = await uploadPhoto(file);
+        const values = { name: $('#pName').value.trim(), category: $('#pCategory').value, price_usd: Number($('#pPrice').value), units_available: Number($('#pStock').value), label: $('#pTag').value.trim().toUpperCase() || null, photo_url: uploaded?.url || existing.photo_url, photo_path: uploaded?.path || existing.photo_path || null };
+        const request = existing ? supabase.from('products').update(values).eq('id', existing.id) : supabase.from('products').insert(values);
+        const { error } = await request;
+        if (error) throw error;
+        if (uploaded && existing?.photo_path) await supabase.storage.from(PRODUCTS_BUCKET).remove([existing.photo_path]);
+        await loadProducts(); resetProductForm(); toast(existing ? 'Producto actualizado' : 'Producto publicado');
+      } catch (error) {
+        console.error(error);
+        if (uploaded?.path) await supabase.storage.from(PRODUCTS_BUCKET).remove([uploaded.path]);
+        setStatus('#productStatus', error.message || 'No fue posible guardar el producto.', 'error');
+      } finally { button.disabled = false; }
+    }
+
+    function renderInventory() {
+      if (!isAdmin) return;
+      $('#inventoryList').innerHTML = products.length ? products.map((product) => `<div class="inventory-row"><div class="thumb" style="${imageStyle(product.photo_url)}"></div><div><b>${escapeHtml(product.name)}</b><small>${escapeHtml(product.category)} · ${money(product.price_usd)} · ${product.units_available} en inventario</small></div><div class="inventory-actions"><button class="edit" type="button" data-edit-product="${product.id}">Editar</button><button class="delete" type="button" data-delete-product="${product.id}">Eliminar</button></div></div>`).join('') : '<p class="notice">Aún no hay productos publicados.</p>';
+    }
+
+    async function deleteProduct(id) {
+      const product = findProduct(id); if (!product || !window.confirm(`¿Eliminar “${product.name}” del catálogo?`)) return;
+      const { error } = await supabase.from('products').delete().eq('id', id);
+      if (error) { console.error(error); return toast('No fue posible eliminar el producto'); }
+      if (product.photo_path) await supabase.storage.from(PRODUCTS_BUCKET).remove([product.photo_path]);
+      cart = cart.filter((item) => item.id !== id); saveCart(); await loadProducts(); toast('Producto eliminado');
+    }
+
+    $('#bagButton').addEventListener('click', () => { renderCart(); openModal('cartModal'); });
+    $('#checkoutButton').addEventListener('click', checkout);
+    $('#whatsAppInfo').addEventListener('click', () => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, quisiera más información sobre las prendas.')}`, '_blank', 'noopener'));
+    $('#adminButton').addEventListener('click', async () => { await refreshAuth(); openModal('adminModal'); });
+    $('#loginForm').addEventListener('submit', signIn);
+    $('#signOutButton').addEventListener('click', signOut); $('#deniedSignOut').addEventListener('click', signOut);
+    $('#productForm').addEventListener('submit', saveProduct); $('#cancelEdit').addEventListener('click', resetProductForm);
+    $('#filters').addEventListener('click', (event) => { const button = event.target.closest('[data-category]'); if (!button) return; selectedCategory = button.dataset.category; renderCatalog(); });
+    $('#catalog').addEventListener('click', (event) => { const card = event.target.closest('[data-product-id]'); if (card) openProduct(card.dataset.productId); });
+    $('#catalog').addEventListener('keydown', (event) => { if ((event.key === 'Enter' || event.key === ' ') && event.target.matches('[data-product-id]')) { event.preventDefault(); openProduct(event.target.dataset.productId); } });
+    $('#cartItems').addEventListener('click', (event) => { const button = event.target.closest('[data-remove-cart]'); if (!button) return; cart = cart.filter((item) => item.id !== button.dataset.removeCart); saveCart(); renderCart(); renderBag(); });
+    $('#inventoryList').addEventListener('click', (event) => { const edit = event.target.closest('[data-edit-product]'); const remove = event.target.closest('[data-delete-product]'); if (edit) startEdit(edit.dataset.editProduct); if (remove) deleteProduct(remove.dataset.deleteProduct); });
+    document.addEventListener('click', (event) => { const button = event.target.closest('[data-close]'); if (button) closeModal(button.dataset.close); if (event.target.classList.contains('modal')) event.target.classList.remove('show'); });
+
+    supabase.auth.onAuthStateChange(() => { window.setTimeout(refreshAuth, 0); });
+    await refreshAuth();
+    await loadProducts();
   </script>
 </body>
 </html>
