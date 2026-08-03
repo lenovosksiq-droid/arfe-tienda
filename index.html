@@ -41,7 +41,8 @@
     const PRODUCTS_BUCKET = 'product-images';
     const WHATSAPP_NUMBER = '593962893973';
     const CART_STORAGE_KEY = 'arfeCart';
-    const ADMIN_USER_ID = '8996a148-e6c2-4205-b399-f808237c957e';
+    // Solo controla qué panel se muestra. Las políticas RLS siguen validando el UID en Supabase.
+    const ADMIN_EMAIL = 'casl9467@gmail.com';
     const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
 
     let products = [];
@@ -133,7 +134,7 @@
     async function refreshAuth() {
       const { data: { session: activeSession } } = await supabase.auth.getSession();
       session = activeSession;
-      isAdmin = session?.user?.id === ADMIN_USER_ID;
+      isAdmin = session?.user?.email?.toLowerCase() === ADMIN_EMAIL;
       syncAdminView();
     }
 
