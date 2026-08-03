@@ -41,6 +41,7 @@
     const PRODUCTS_BUCKET = 'product-images';
     const WHATSAPP_NUMBER = '593962893973';
     const CART_STORAGE_KEY = 'arfeCart';
+    const ADMIN_USER_ID = '8996a148-e6c2-4205-b399-f808237c957e';
     const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
 
     let products = [];
@@ -132,12 +133,7 @@
     async function refreshAuth() {
       const { data: { session: activeSession } } = await supabase.auth.getSession();
       session = activeSession;
-      isAdmin = false;
-      if (session) {
-        const { data, error } = await supabase.rpc('is_admin');
-        if (error) console.error(error);
-        isAdmin = data === true;
-      }
+      isAdmin = session?.user?.id === ADMIN_USER_ID;
       syncAdminView();
     }
 
