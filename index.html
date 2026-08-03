@@ -54,7 +54,7 @@
     const $ = (selector) => document.querySelector(selector);
     const money = (value) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Number(value));
     const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[character]);
-    const imageStyle = (url) => `background-image:url("${encodeURI(String(url || '')).replace(/"/g, '%22')}")`;
+    const imageStyle = (url) => `background-image:url('${encodeURI(String(url || '')).replace(/'/g, '%27')}')`;
 
     function safelyReadCart() {
       try {
